@@ -1,29 +1,31 @@
 package org.asia;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor //generuje knstruktor bezargumentowy
 public class Calculator {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bulbulatorStefan;
     private Integer number1;
     private Integer number2;
+
 
     public Calculator(Integer number1, Integer number2) {
         this.number1 = number1;
         this.number2 = number2;
     }
 
-    public Integer getNumber1() {
-        return number1;
-    }
-
-    public void setNumber1(Integer number1) {
-        this.number1 = number1;
-    }
-
-    public Integer getNumber2() {
-        return number2;
-    }
-
-    public void setNumber2(Integer number2) {
-        this.number2 = number2;
-    }
 
     public Integer addNumbers(){
         return number1+number2;
@@ -54,4 +56,6 @@ public class Calculator {
     public Integer adam(Integer a, Integer b){
         return a;
     }
+
+
 }
